@@ -65,7 +65,6 @@ header .primary-navigation {
 }
 
 .primary-navigation .menu li a:hover {
-    transform: translateY(-10px);
     color: var(--dark-blue);
 }
 
@@ -82,8 +81,116 @@ header .primary-navigation {
     color: inherit;
     font-size: 1.3rem;
     cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s;
 }
 
+.primary-navigation button:hover,
+.primary-navigation button.active {
+    background: var(--dark-purple);
+    color: var(--orange-web);
+}
+
+@media (max-width: 640px) {
+    .primary-navigation .menu-toggle {
+        display: block;
+    }
+
+    .primary-navigation {
+        position: relative;
+    }
+
+    .primary-navigation .menu {
+        position: absolute;
+        top: 110%;
+        right: 0;
+        background: var(--dark-purple);
+        color: var(--orange-web);
+        display: grid !important;
+        text-align: center;
+        width: 200px;
+        border-radius: 3px;
+        padding: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+    
+    .menu.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .primary-navigation .menu li a:hover {
+        color: white;
+    }
+}
+
+
+/* hero section */
+section#hero {
+    text-align: center;
+    padding: 20px;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section#hero h1 {
+    font-weight: 300;
+    font-size: 4.5rem;
+    text-align: center;
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 569px) {
+    section#hero h1 {
+        font-size: 3rem;
+    }
+}
+
+section#hero h2 {
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+section#hero p {
+    width: min(95%, 550px);
+    padding: 10px 0;
+    margin: auto;
+}
+
+span.bold {
+    font-weight: 600;
+    color: var(--orange-web) !important;
+}
+
+section#hero h1 span.bold {
+    color: white;
+}
+
+section#hero .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+section#hero .buttons a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    background: var(--orange-web);
+    height: 35px;
+    width: 120px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* mouse follow designs */
 .circle {
