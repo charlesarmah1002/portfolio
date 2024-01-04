@@ -84,6 +84,10 @@ header nav.primary-navigation .menu li a.btn:hover {
 }
 
 @media (max-width: 750px) {
+    a.logo img {
+        height: 35px;
+    }
+
     header nav.primary-navigation {
         position: relative;
     }
