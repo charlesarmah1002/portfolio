@@ -1,5 +1,5 @@
 * {
-    font-family: 'Poppins',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -113,7 +113,7 @@ header nav.primary-navigation .menu li a.btn:hover {
         pointer-events: all;
     }
 
-    header nav.primary-navigation .menu li a{
+    header nav.primary-navigation .menu li a {
         text-align: center !important;
     }
 
@@ -214,7 +214,8 @@ section#aboutme .video-container .video {
     object-position: center;
 }
 
-.video-container .buttons {
+.video-container .cover,
+.video-container:hover .cover {
     position: absolute;
     z-index: 2;
     top: 0;
@@ -225,42 +226,132 @@ section#aboutme .video-container .video {
     align-items: center;
     justify-content: center;
     background: #3B3F4075;
+    transition: 0.3s;
+    opacity: 1;
 }
 
-.video-container .buttons svg {
+.video-container .cover svg {
     cursor: pointer;
 }
 
 section#blog_posts .container {
-    width: min(100%, 1100px);
+    width: min(100%, 900px);
     margin: 10px auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+section#blog_posts .container h3 {
+    font-weight: 400;
+    font-size: 2.2rem;
 }
 
 .swiper {
     width: 100%;
     /* height: 100%; */
     aspect-ratio: 16/9;
-  }
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
 
-  .swiper-slide {
+.swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute !important;
+    width: 35px !important;
+    border: 1px solid;
+    height: 35px !important;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0 !important;
+    left: auto !important;
+    right: 0 !important;
+    margin: 10px !important;
+    font-size: 1.3rem;
+    background: #40575840;
+    backdrop-filter: blur(20px);
+    color: white !important;
+}
+
+.swiper-button-next {
+    position: absolute;
+    bottom: 40px !important;
+    top: auto !important;
+}
+
+.swiper-button-prev {
+    bottom: 0 !important;
+    position: absolute;
+    top: auto !important;
+}
+
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-family: fontawesome !important;
+    font-size: var(--swiper-navigation-size);
+    content: 'fa-solid fa-bracket' !important;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    display: none !important;
+}
+
+.swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.swiper .content {
+    position: absolute;
+    bottom: 20px;
+    padding: 30px;
+    background: #00000040;
+    width: 90%;
+    margin: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.swiper .content h4 {
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.swiper .content p {
+    height: 87px;
+    overflow: hidden;
+    font-weight: 300;
+}
+
+.swiper-slide {
+    position: relative;
+}
 
 section#portfolio .container {
     display: grid;
